@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 import ru.kata.spring.boot_security.demo.model.Role;
 import ru.kata.spring.boot_security.demo.model.User;
 import ru.kata.spring.boot_security.demo.service.UserService;
-
 import java.util.Set;
 
 @Component
@@ -22,6 +21,7 @@ public class Start implements ApplicationListener<ContextRefreshedEvent> {
     public void onApplicationEvent(ContextRefreshedEvent event) {
         Role user = new Role("ROLE_USER");
         Role admin = new Role("ROLE_ADMIN");
+
         Set<Role> role1 = Set.of(admin);
         Set<Role> role2 = Set.of(user);
         User user1 = new User("qwerty@gmail.com", "12345", "Ruslan", "Zaitsev", "men", role1);

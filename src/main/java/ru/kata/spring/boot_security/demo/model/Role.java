@@ -9,13 +9,6 @@ import java.util.Objects;
 @Table(name = "roles")
 @Data
 public class Role {
-    @Override
-    public String toString() {
-        return "Role{" +
-                "id=" + id +
-                ", roleName='" + roleName + '\'' +
-                '}';
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,5 +39,12 @@ public class Role {
         return Objects.hash(id, roleName);
     }
 
+    @Override
+    public String toString() {
+        return "Role{" +
+                "id=" + id +
+                ", roleName='" + roleName + '\'' +
+                '}';
+    }
 
 }
